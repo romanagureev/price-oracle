@@ -1,6 +1,9 @@
 # Chain several price sources
 # pragma version 0.4.3
 
+version: public(constant(String[8])) = "0.0.1"
+oracle_type: public(constant(String[16])) = "Rate"
+
 from snekmate.utils import math
 
 import IPriceOracle

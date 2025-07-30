@@ -8,6 +8,18 @@ struct PriceParameters:
 
 @external
 @view
+def version() -> String[8]:
+    ...
+
+
+@external
+@view
+def oracle_type() -> String[16]:
+    ...
+
+
+@external
+@view
 def price() -> uint256:
     ...
 
