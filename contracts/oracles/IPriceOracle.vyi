@@ -1,0 +1,29 @@
+# pragma version 0.4.3
+
+
+struct PriceParameters:
+    price: uint256
+    confidence: uint256
+
+
+@external
+@view
+def price() -> uint256:
+    ...
+
+
+@external
+@view
+def confidence() -> uint256:
+    ...
+
+
+@external
+@view
+def parameters() -> PriceParameters:
+    ...
+
+
+# TODO: how about bounds with confidence?
+
+

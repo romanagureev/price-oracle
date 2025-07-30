@@ -1,0 +1,25 @@
+# pragma version 0.4.3
+
+
+struct PriceParameters:
+    price: uint256
+    confidence: uint256
+
+
+MAX_ORACLES: constant(uint256) = 4
+MAX_CONFIDENCE: constant(uint256) = 10**18  # TODO: Can it be of different measure?
+
+
+@view
+def _get_price(_parameters: DynArray[PriceParameters, MAX_ORACLES]) -> uint256:
+    ...
+
+
+@view
+def _get_bounds(_parameters: DynArray[PriceParameters, MAX_ORACLES]) -> (uint256, uint256):
+    ...
+
+
+@view
+def _get_confidene(_parameters: DynArray[PriceParameters, MAX_ORACLES]) -> uint256:
+    ...

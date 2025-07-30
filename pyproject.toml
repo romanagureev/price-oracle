@@ -1,0 +1,35 @@
+[project]
+name        = "price-oracle"
+version     = "0.0.1"
+description = "Generic Price oracles"
+authors     = [{ name = "romanagureev", email = "iromanagureev@gmail.com" }]
+
+readme          = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "vyper>=0.4.3",
+    "snekmate==0.1.2",
+    "ruff>=0.9.6",
+    "mamushi==0.0.4a3",
+    # placeholders for git dependencies
+    "titanoboa",
+]
+
+[dependency-groups]
+dev = [
+    "pytest-xdist>=3.6.1",
+]
+
+[tool.uv.sources]
+titanoboa    = { git = "https://github.com/vyperlang/titanoboa.git", rev = "19d2a5d7745ac8ed29639257e8d49bfb1bdb366a" }  # Update after `pytest .` check
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+markers = [
+    "forked: Tests run in forked environment.",
+    "slow: Mark tests that take longer to execute, mainly stateful tests interacting with different contract states.",
+]
+pythonpath = ["."]
